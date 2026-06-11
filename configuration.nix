@@ -43,6 +43,7 @@
   environment.systemPackages = with pkgs; [
     vim
     neovim
+		tmux
     wget
     kitty
     waybar
@@ -51,6 +52,7 @@
     discord
     steam
     rofi
+		fastfetch
   ];  
 
   nix.settings.experimental-features = [" nix-command" "flakes"];

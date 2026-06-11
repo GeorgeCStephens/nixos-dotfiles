@@ -10,10 +10,13 @@
 			btw = "echo i use hyprland btw";
 			rebuild-flake = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#gcs";
 			dotfiles = "nvim ~/nixos-dotfiles";
+			nconf_edit = "nvim ~/.config/nvim/init.lua";
+			hconf_edit = "nvim ~/nixos-dotfiles/config/hypr/hyprland.conf";
+			conf_edit = "nvim ~/nixos-dotfiles/config/";
 		};
 		profileExtra = ''
 			if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-				exec hyprland 
+				exec start-hyprland 
 			fi
 		'';
 	};
