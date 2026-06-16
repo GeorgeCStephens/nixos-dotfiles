@@ -1,14 +1,17 @@
-@define-color bg    #1a1b26; 
-@define-color fg    #a9b1d6; 
-@define-color blk   #32344a; 
-@define-color red   #f7768e; 
-@define-color grn   #9ece6a; 
-@define-color ylw   #e0af68; 
-@define-color blu   #7aa2f7; 
-@define-color mag   #ad8ee6; 
-@define-color cyn   #0db9d7; 
-@define-color brblk #444b6a; 
-@define-color white #ffffff; 
+@define-color bg    #282828;
+@define-color bg1   #3c3836;
+@define-color fg    #ebdbb2;
+
+@define-color red   #fb4934;
+@define-color grn   #b8bb26;
+@define-color ylw   #fabd2f;
+@define-color blu   #83a598;
+@define-color mag   #d3869b;
+@define-color cyn   #8ec07c;
+@define-color org   #fe8019;
+
+@define-color gray  #928374;
+@define-color white #fbf1c7;
 
 * {
     font-family: "JetBrainsMono Nerd Font", monospace;
@@ -23,29 +26,33 @@ window#waybar {
 
 #workspaces button {
     padding: 0 6px;
-    color: @cyn;
+    color: @gray;
     background: transparent;
     border-bottom: 3px solid @bg;
 }
+
 #workspaces button.active {
-    color: @cyn;
-    border-bottom: 3px solid @mag;
+    color: @ylw;
+    border-bottom: 3px solid @org;
 }
+
 #workspaces button.empty {
-    color: @white;
+    color: @gray;
 }
+
 #workspaces button.empty.active {
-    color: @cyn;
-    border-bottom: 3px solid @mag;
+    color: @ylw;
+    border-bottom: 3px solid @org;
 }
 
 #workspaces button.urgent {
     background-color: @red;
+    color: @bg;
 }
 
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px @ylw;
 }
 
 #clock,
@@ -57,26 +64,26 @@ button:hover {
 #network,
 #tray {
     padding: 0 8px;
-    color: @white;
+    color: @fg;
 }
 
 #custom-sep {
-    color: @brblk;
+    color: @gray;
 }
 
 #clock {
-    color: @cyn;
-    border-bottom: 4px solid @cyn;
+    color: @ylw;
+    border-bottom: 4px solid @ylw;
 }
 
 #battery {
-    color: @mag;
-    border-bottom: 4px solid @mag;
+    color: @grn;
+    border-bottom: 4px solid @grn;
 }
 
 #disk {
-    color: @ylw;
-    border-bottom: 4px solid @ylw;
+    color: @org;
+    border-bottom: 4px solid @org;
 }
 
 #memory {
@@ -85,8 +92,8 @@ button:hover {
 }
 
 #cpu {
-    color: @grn;
-    border-bottom: 4px solid @grn;
+    color: @cyn;
+    border-bottom: 4px solid @cyn;
 }
 
 #network {
@@ -96,9 +103,13 @@ button:hover {
 
 #network.disconnected {
     background-color: @red;
+    color: @bg;
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: @bg1;
 }
 
+window#waybar {
+    background-color: rgba(40, 40, 40, 0.7);
+}

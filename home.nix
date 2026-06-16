@@ -13,13 +13,16 @@
 			nconf_edit = "nvim ~/.config/nvim/init.lua";
 			hconf_edit = "nvim ~/nixos-dotfiles/config/hypr/hyprland.conf";
 			conf_edit = "nvim ~/nixos-dotfiles/config/";
+			push_dotfiles = "cd ~/nixos-dotfiles && git add . && git commit";
 		};
-		profileExtra = ''
-			if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-				exec start-hyprland 
-			fi
-		'';
 	};
 	home.file.".config/hypr".source = ./config/hypr;
 	home.file.".config/waybar".source = ./config/waybar;
+	home.pointerCursor = {
+		gtk.enable = true;
+		x11.enable = true;
+		package = pkgs.bibata-cursors;
+		name = "Bibata-Modern-Ice";
+		size = 24;
+	};
 }
