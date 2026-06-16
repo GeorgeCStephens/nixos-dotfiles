@@ -13,7 +13,8 @@
 			nconf_edit = "nvim ~/.config/nvim/init.lua";
 			hconf_edit = "nvim ~/nixos-dotfiles/config/hypr/hyprland.conf";
 			conf_edit = "nvim ~/nixos-dotfiles/config/";
-			push_dotfiles = "cd ~/nixos-dotfiles && git add . && git commit";
+			commit_dotfiles = "cd ~/nixos-dotfiles && git add . && git commit";
+			full_rebuild = "rebuild-flake && commit_dotfiles";
 		};
 	};
 	home.file.".config/hypr".source = ./config/hypr;
