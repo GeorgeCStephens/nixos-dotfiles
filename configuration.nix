@@ -10,6 +10,19 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
+  };
+
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
@@ -43,6 +56,7 @@
   };
 
   programs.firefox.enable = true;
+	programs.steam.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
@@ -54,7 +68,6 @@
     git
     hyprpaper
     discord
-    steam
     rofi
 		fastfetch
   ];  
