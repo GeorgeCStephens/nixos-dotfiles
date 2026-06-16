@@ -16,6 +16,11 @@
 			commit_dotfiles = "cd ~/nixos-dotfiles && git add . && git commit";
 			full_rebuild = "rebuild-flake && commit_dotfiles";
 		};
+		profileExtra = ''
+			if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+				exec start-hyprland 
+			fi
+		'';
 	};
 	home.file.".config/hypr".source = ./config/hypr;
 	home.file.".config/waybar".source = ./config/waybar;
